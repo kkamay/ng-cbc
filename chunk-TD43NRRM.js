@@ -1,0 +1,1 @@
+import{ka as c,ta as n,ua as o,wa as a}from"./chunk-ZEA5Q4OX.js";var i=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=c({type:t,selectors:[["app-cbc"]],decls:2,vars:0,template:function(e,p){e&1&&(n(0,"p"),a(1,"cbc works!"),o())},encapsulation:2})};export{i as Cbc};
