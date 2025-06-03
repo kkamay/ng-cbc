@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "github-build": "ng build --configuration production --base-href 'https://kkamay.github.io/ng-cbc/'"
+    "github-build": "ng build --configuration production --base-href 'https://kkamay.github.io/ng-cbc/'",
+    "github-deploy": "npx angular-cli-ghpages --dir=dist/ng-cbc/browser --no-silent"
   },
   "private": true,
   "dependencies": {
