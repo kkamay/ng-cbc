@@ -1,1 +1,31 @@
-<p>cbc works!</p>
+@if (clicked < 10) {
+    <p (click)="increment()">cbc works!</p>
+} @else {
+    @for (cbcItem of cbcItems; track cbcItem.name) {
+        <div>
+            <h4>{{cbcItem.name}} ({{cbcItem.minVal}} - {{cbcItem.maxVal}})</h4>
+            <table>
+                <tr>
+                    <th>Tarih</th>
+                    <th>Değer</th>
+                    <th>Durum</th>
+                </tr>
+                @for (cbcItemVal of cbcItem.values; track cbcItemVal.date) {
+                    <tr>
+                        <td>{{cbcItemVal.date}}</td>
+                        <td>{{cbcItemVal.value}}</td>
+                        <td>
+                            @if (cbcItemVal.value < cbcItem.minVal) {
+                                ❌ ⬇️
+                            } @else if (cbcItemVal.value > cbcItem.maxVal) {
+                                ❌ ⬆️
+                            } @else {
+                                ✅
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+}
