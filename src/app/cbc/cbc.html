@@ -1,31 +1,43 @@
 @if (clicked < 10) {
-    <p (click)="increment()">cbc works!</p>
+  <p (click)="increment()">cbc works!</p>
 } @else {
-    @for (cbcItem of cbcItems; track cbcItem.name) {
-        <div>
-            <h4>{{cbcItem.name}} ({{cbcItem.minVal}} - {{cbcItem.maxVal}})</h4>
-            <table>
+  @for (cbcItem of cbcItems; track cbcItem.name) {
+    <div class="p-2 mb-4">
+      <h5>{{cbcItem.name}} ({{cbcItem.minVal}} - {{cbcItem.maxVal}})</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Tarih</th>
+                <th>Değer</th>
+                <th>Durum</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (cbcItemVal of cbcItem.values; track cbcItemVal.date) {
                 <tr>
-                    <th>Tarih</th>
-                    <th>Değer</th>
-                    <th>Durum</th>
+                  <td>{{cbcItemVal.date}}</td>
+                  <td>{{cbcItemVal.value}}</td>
+                  <td>
+                    @if (cbcItemVal.value < cbcItem.minVal) {
+                      ❌ ⬇️
+                    } @else if (cbcItemVal.value > cbcItem.maxVal) {
+                      ❌ ⬆️
+                    } @else {
+                      ✅
+                    }
+                  </td>
                 </tr>
-                @for (cbcItemVal of cbcItem.values; track cbcItemVal.date) {
-                    <tr>
-                        <td>{{cbcItemVal.date}}</td>
-                        <td>{{cbcItemVal.value}}</td>
-                        <td>
-                            @if (cbcItemVal.value < cbcItem.minVal) {
-                                ❌ ⬇️
-                            } @else if (cbcItemVal.value > cbcItem.maxVal) {
-                                ❌ ⬆️
-                            } @else {
-                                ✅
-                            }
-                        </td>
-                    </tr>
-                }
-            </table>
+              }
+            </tbody>
+          </table>
         </div>
-    }
+        <div class="col-md-8">
+          
+        </div>
+      </div>
+      
+    </div>
+  }
 }
