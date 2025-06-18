@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CbcItemChart } from './cbc-item-chart/cbc-item-chart';
+import { CbcItem } from '../proxy/cbc.service';
 
 @Component({
   selector: 'app-cbc',
-  imports: [],
+  imports: [
+    CbcItemChart
+  ],
   templateUrl: './cbc.html',
   styleUrl: './cbc.scss'
 })
@@ -27,16 +31,4 @@ export class Cbc implements OnInit {
   increment() {
     this.clicked++;
   }
-}
-
-interface CbcItem {
-  name: string;
-  minVal: number;
-  maxVal: number;
-  values: CbcItemVal[];
-}
-
-interface CbcItemVal {
-  date: string;
-  value: number;
 }
