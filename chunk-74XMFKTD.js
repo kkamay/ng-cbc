@@ -1,1 +1,0 @@
-import{Ca as t,Da as n,Ia as r,pa as o}from"./chunk-KKMP76WQ.js";var a=class l{static \u0275fac=function(e){return new(e||l)};static \u0275cmp=o({type:l,selectors:[["app-hello-world"]],decls:2,vars:0,template:function(e,s){e&1&&(t(0,"h1"),r(1,"HELLO WORLD!"),n())},encapsulation:2})};export{a as HelloWorld};
